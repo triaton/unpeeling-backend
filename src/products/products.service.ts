@@ -18,7 +18,9 @@ export class ProductsService {
     }
 
     async reIndexAll() {
-        let products = await this.findAll();
+        // TODO: please refer this part for adding indexes.
+        // it should be refactored to a service method
+        const products = await this.findAll();
         const len = products.length;
         for (let i = 0; i < len; i++) {
             const product = products[i];

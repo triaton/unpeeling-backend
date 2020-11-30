@@ -16,6 +16,9 @@ import { ProductElasticIndex } from '../search/search-index/product.elastic.inde
       useFactory: () => {
         const schema = ProductSchema;
         schema.pre('save', function(next) {
+          // TODO: add save/update index code here
+          // 'this' object has the 'product' object to save/update
+          // index should be updated with the product object
           console.log(this);
           next();
         });
