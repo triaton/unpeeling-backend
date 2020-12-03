@@ -20,6 +20,7 @@ export class ElasticSearchBody {
 export class ProductSearchObject {
   public static searchObject(q: any) {
     const body = this.elasticSearchBody(q);
+    delete body.size;
     return { index: productIndex._index, body, q };
   }
 
